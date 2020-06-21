@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "font-family-name-quotes": "always-where-recommended",
+    "function-url-quotes": [
+      "always",
+      {
+        "except": ["empty"]
+      }
+    ],
+
+    "unit-whitelist": ["px", "%", "em", "rem", "vw", "vh", "deg", "s"],
+    "max-empty-lines": 2,
+    "max-line-length": 120
+  }
+}

@@ -1,0 +1,74 @@
+<button mat-raised-button
+        color="primary"
+        [routerLink]="['/home']">
+  Back
+</button>
+
+<h1>Create User</h1>
+
+<form *ngIf="form"
+      [formGroup]="form"
+      (submit)="onSubmit()"
+      autocomplete="off">
+  <mat-form-field appearance="fill" class="profile-input__full-width">
+    <mat-label>First Name</mat-label>
+
+    <input formControlName="first_name"
+           matInput
+           name="first_name"
+           type="text"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"
+                  class="profile-input__full-width">
+    <mat-label>Last Name</mat-label>
+
+    <input formControlName="last_name"
+           matInput
+           name="last_name"
+           type="text"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="profile-input__full-width">
+    <mat-label>Email</mat-label>
+
+    <input formControlName="email"
+           matInput
+           name="email"
+           type="text"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"
+                  class="profile-input__full-width">
+    <mat-label>Phone</mat-label>
+
+    <input formControlName="phone"
+           matInput
+           name="phone"
+           type="text"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="profile-input__calendar">
+    <mat-label>Birth Date</mat-label>
+
+    <input
+      type="text"
+      name="birth_date"
+      (click)="openCalendar()"
+      [matDatepicker]="picker"
+      formControlName="birth_date"
+      matInput
+      readonly/>
+
+    <mat-datepicker-toggle matSuffix
+                           [for]="picker">
+    </mat-datepicker-toggle>
+
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button
+          color="default">
+    Submit
+  </button>
+</form>

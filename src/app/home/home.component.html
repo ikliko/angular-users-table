@@ -1,0 +1,17 @@
+<div class="container">
+  <button mat-raised-button
+          color="accent"
+          [routerLink]="['/user/create']">
+    Add User
+  </button>
+
+
+  <app-table *ngIf="dataSource && columns"
+             [dataSource]="dataSource"
+             [columns]="columns"
+             [config]="userTableConfig"
+             (columnsOrderChange)="onColumnsOrderChange($event)"
+             (sortChange)="onSortChange($event)"
+             (rowClick)="onRowClick($event)">
+  </app-table>
+</div>
